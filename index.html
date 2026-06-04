@@ -20,9 +20,10 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 20px 8%;
+            text-align: center;
+            padding: 30px 20px;
             background-color: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
@@ -30,15 +31,34 @@
             z-index: 100;
         }
 
+        .logo-container {
+            margin-bottom: 15px;
+        }
+
         .logo {
-            font-size: 1.6rem;
+            font-size: 2.4rem;
             font-weight: 800;
             color: #512da8;
             letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-subtext {
+            font-size: 1.1rem;
+            color: #666666;
+            margin-top: 5px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
         }
 
         nav a {
-            margin-left: 25px;
             text-decoration: none;
             color: #555555;
             font-weight: 600;
@@ -49,9 +69,89 @@
             color: #512da8;
         }
 
+        .gallery-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+            height: 500px;
+            background-color: #311b92;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            color: #ffffff;
+            padding: 40px 30px 25px 30px;
+            text-align: left;
+        }
+
+        .slide-caption h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .slide-caption p {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .slider-nav a {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #b3a9cc;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .slider-nav a:hover {
+            background-color: #512da8;
+        }
+
         .hero {
-            background: linear-gradient(rgba(49, 27, 146, 0.75), rgba(49, 27, 146, 0.75)), url('hero-women.jpg') no-repeat center center/cover;
-            height: 75vh;
+            background: linear-gradient(rgba(49, 27, 146, 0.8), rgba(49, 27, 146, 0.8)), url('hero-women.jpg') no-repeat center center/cover;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,6 +159,7 @@
             text-align: center;
             color: #ffffff;
             padding: 0 20px;
+            margin-top: 40px;
         }
 
         .hero h1 {
@@ -177,12 +278,26 @@
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
+            .logo {
+                font-size: 1.8rem;
+            }
+            .logo-subtext {
+                font-size: 0.95rem;
+            }
+            nav {
                 gap: 15px;
             }
             nav a {
-                margin: 0 10px;
+                font-size: 0.95rem;
+            }
+            .slide {
+                height: 350px;
+            }
+            .slide-caption h3 {
+                font-size: 1.3rem;
+            }
+            .slide-caption p {
+                font-size: 0.9rem;
             }
             .hero h1 {
                 font-size: 2.4rem;
@@ -204,7 +319,10 @@
 <body>
 
     <header>
-        <div class="logo">WE FOR HEIGHTS</div>
+        <div class="logo-container">
+            <div class="logo">WE FOR HEIGHTS FOUNDATION</div>
+            <div class="logo-subtext">Women Empowerment for Health, Education, Income, Rights, Training, Self-defense</div>
+        </div>
         <nav>
             <a href="#">Home</a>
             <a href="#">Our Vision</a>
@@ -212,6 +330,37 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+
+    <div class="gallery-container">
+        <div class="slider">
+            <div class="slide" id="slide-1">
+                <img src="assets/1.jpg" alt="Health program initiatives">
+                <div class="slide-caption">
+                    <h3>Health Initiatives</h3>
+                    <p>Providing essential physical and mental wellness support to women across communities.</p>
+                </div>
+            </div>
+            <div class="slide" id="slide-2">
+                <img src="assets/2.jpg" alt="Education programs">
+                <div class="slide-caption">
+                    <h3>Educational Resource Access</h3>
+                    <p>Uplifting marginalized and below-middle-class students with foundational learning opportunities.</p>
+                </div>
+            </div>
+            <div class="slide" id="slide-3">
+                <img src="assets/3.jpg" alt="Vocational training session">
+                <div class="slide-caption">
+                    <h3>Vocational Training & Skill Development</h3>
+                    <p>Empowering women through active capacity building to foster independent livelihoods.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
 
     <section class="hero">
         <h1>Empowering Women,<br>Elevating Communities</h1>
