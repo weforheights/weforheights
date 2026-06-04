@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE FOR HEIGHTS | Empowering Women, Elevating Futures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f6fc;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #512da8;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #512da8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(49, 27, 146, 0.75), rgba(49, 27, 146, 0.75)), url('hero-women.jpg') no-repeat center center/cover;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #00bfa5;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #009688;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: #512da8;
+            transform: translateY(-2px);
+        }
+
+        .mission {
+            padding: 80px 10%;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .mission h2 {
+            font-size: 2.2rem;
+            color: #311b92;
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666666;
+        }
+
+        .programs {
+            padding: 60px 8% 80px;
+        }
+
+        .programs h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #311b92;
+            margin-bottom: 40px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            border-top: 4px solid #512da8;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #311b92;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #555555;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #1a0f3d;
+            color: #b3a9cc;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WE FOR HEIGHTS</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Our Vision</a>
+            <a href="#">Programs</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Empowering Women,<br>Elevating Communities</h1>
+        <p>We provide education, strategic leadership training, and sustainable skill-building initiatives designed to help women secure independence and shatter systemic barriers.</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Our Initiatives</a>
+            <a href="#" class="btn btn-secondary">Support Our Mission</a>
+        </div>
+    </section>
+
+    <section class="mission">
+        <h2>Breaking Barriers, Building Futures</h2>
+        <p>WE FOR HEIGHTS focuses on cultivating economic autonomy and robust leadership frameworks for women. Through structured community programs, advocacy campaigns, and resource access, we assist women in expanding their socioeconomic impact.</p>
+    </section>
+
+    <section class="programs">
+        <h2>Core Focus Areas</h2>
+        <div class="program-grid">
+            <div class="card">
+                <h3>Skill Development</h3>
+                <p>Providing specialized training workshops, professional mentoring, and technical resources to facilitate long-term financial independence.</p>
+            </div>
+            <div class="card">
+                <h3>Leadership & Mentorship</h3>
+                <p>Connecting emerging local leaders with experienced industry professionals to foster strategic career navigation and community advocacy.</p>
+            </div>
+            <div class="card">
+                <h3>Socioeconomic Advocacy</h3>
+                <p>Organizing strategic campaigns, educational outreach, and infrastructure initiatives to secure legal and financial resources for women globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WE FOR HEIGHTS. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
