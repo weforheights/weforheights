@@ -282,6 +282,7 @@
             gap: 35px;
         }
 
+        /* UPDATED CARD CSS TO SUPPORT LINKS */
         .card {
             background-color: #ffffff;
             padding: 45px 35px;
@@ -289,6 +290,10 @@
             box-shadow: 0 8px 25px rgba(106, 27, 154, 0.05);
             border-top: 6px solid #6a1b9a;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+            cursor: pointer;
         }
 
         .card:hover {
@@ -310,7 +315,6 @@
             font-weight: 400;
         }
 
-        /* UPDATED FOOTER AND CONTACT STYLES */
         footer {
             background-color: #2a085c;
             color: #e1bee7;
@@ -356,41 +360,17 @@
         }
 
         @media (max-width: 768px) {
-            .logo {
-                font-size: 2rem;
-            }
-            .logo-subtext {
-                font-size: 0.95rem;
-            }
-            nav {
-                gap: 20px;
-            }
-            nav a {
-                font-size: 1rem;
-            }
-            .slide {
-                height: 380px;
-            }
-            .slide-caption h3 {
-                font-size: 1.4rem;
-            }
-            .slide-caption p {
-                font-size: 0.95rem;
-            }
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-            .hero p {
-                font-size: 1.15rem;
-            }
-            .cta-buttons {
-                width: 100%;
-                max-width: 300px;
-            }
-            .btn {
-                text-align: center;
-                width: 100%;
-            }
+            .logo { font-size: 2rem; }
+            .logo-subtext { font-size: 0.95rem; }
+            nav { gap: 20px; }
+            nav a { font-size: 1rem; }
+            .slide { height: 380px; }
+            .slide-caption h3 { font-size: 1.4rem; }
+            .slide-caption p { font-size: 0.95rem; }
+            .hero h1 { font-size: 2.6rem; }
+            .hero p { font-size: 1.15rem; }
+            .cta-buttons { width: 100%; max-width: 300px; }
+            .btn { text-align: center; width: 100%; }
         }
     </style>
 </head>
@@ -448,7 +428,7 @@
         </div>
         <div style="height: 150px; overflow: hidden; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 1;">
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ffffff;"></path>
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f7f4fc;"></path>
             </svg>
         </div>
     </section>
@@ -459,20 +439,24 @@
     </section>
 
     <section class="programs" id="our-initiatives">
-        <h2>Core Focus Areas</h2>
+        <h2>Core Activities</h2>
         <div class="program-grid">
-            <div class="card">
-                <h3>Skill Development</h3>
-                <p>Providing specialized training workshops, professional mentoring, and technical resources to facilitate long-term financial independence.</p>
-            </div>
+            
+            <a href="health-development.html" target="_blank" class="card">
+                <h3>Health Development</h3>
+                <p>Providing essential physical and mental wellness support, healthcare access, and nutritional awareness to women across communities.</p>
+            </a>
+            
             <div class="card">
                 <h3>Leadership & Mentorship</h3>
                 <p>Connecting emerging local leaders with experienced industry professionals to foster strategic career navigation and community advocacy.</p>
             </div>
+            
             <div class="card">
                 <h3>Socioeconomic Advocacy</h3>
                 <p>Organizing strategic campaigns, educational outreach, and infrastructure initiatives to secure legal and financial resources for women globally.</p>
             </div>
+            
         </div>
     </section>
 
