@@ -310,18 +310,49 @@
             font-weight: 400;
         }
 
+        /* UPDATED FOOTER AND CONTACT STYLES */
         footer {
             background-color: #2a085c;
             color: #e1bee7;
             text-align: center;
-            padding: 50px 20px;
+            padding: 50px 20px 30px;
             font-size: 1rem;
             border-top: 4px solid #ff6f00;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
         }
 
-        footer p {
+        .contact-details h3 {
+            color: #ffeb3b;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-details a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #ff6f00;
+        }
+
+        .copyright-text {
             font-weight: 600;
             letter-spacing: 0.5px;
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(225, 190, 231, 0.2);
+            width: 100%;
+            max-width: 500px;
         }
 
         @media (max-width: 768px) {
@@ -374,7 +405,7 @@
             <a href="#">Home</a>
             <a href="#our-vision">Our Vision</a>
             <a href="#our-initiatives">Programs</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -445,8 +476,13 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 WE FOR HEIGHTS. All Rights Reserved.</p>
+    <footer id="contact">
+        <div class="contact-details">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> <a href="mailto:drsweetyjain.adv@gmail.com">drsweetyjain.adv@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919582353650">+91 95823 53650</a></p>
+        </div>
+        <p class="copyright-text">&copy; 2026 WE FOR HEIGHTS. All Rights Reserved.</p>
     </footer>
 
     <script>
