@@ -90,6 +90,87 @@
             margin-bottom: 10px;
         }
 
+        .gallery-container {
+            width: 100%;
+            margin: 0 auto 35px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(106, 27, 154, 0.15);
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+            height: 450px;
+            background-color: #4a148c;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(74, 20, 140, 0.95));
+            color: #ffffff;
+            padding: 40px 35px 25px 35px;
+            text-align: left;
+        }
+
+        .slide-caption h3 {
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+            color: #ffeb3b;
+        }
+
+        .slide-caption p {
+            font-size: 1.05rem;
+            color: #f3e5f5;
+            font-weight: 400;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .slider-nav a {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #d1c4e9;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .slider-nav a:hover, .slider-nav a:focus {
+            background-color: #ff6f00;
+            transform: scale(1.2);
+        }
+
         .content-container {
             max-width: 1000px;
             margin: 0 auto 80px auto;
@@ -166,6 +247,9 @@
             .logo { font-size: 2rem; }
             .page-header h1 { font-size: 2.2rem; }
             .content-container { padding: 30px 20px; }
+            .slide { height: 320px; }
+            .slide-caption h3 { font-size: 1.3rem; }
+            .slide-caption p { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -189,6 +273,39 @@
     </div>
 
     <div class="content-container">
+
+        <div class="gallery-container">
+            <div class="slider">
+                <div class="slide" id="health-slide-1">
+                    <img src="assets/health1.jpeg" alt="Medical Camp Evaluation">
+                    <div class="slide-caption">
+                        <h3>Community Health Camps</h3>
+                        <p>Providing free wellness checkups and primary diagnostics directly within remote locations.</p>
+                    </div>
+                </div>
+                <div class="slide" id="health-slide-2">
+                    <img src="assets/health2.jpeg" alt="Hygiene Awareness Session">
+                    <div class="slide-caption">
+                        <h3>Maternal Health & Hygiene</h3>
+                        <p>Distributing safety resources and breaking barriers through reproductive care clinics.</p>
+                    </div>
+                </div>
+                <div class="slide" id="health-slide-3">
+                    <img src="assets/health3.jpeg" alt="Mental Health Seminar">
+                    <div class="slide-caption">
+                        <h3>Mental Wellness Groups</h3>
+                        <p>Cultivating secure psychological checkups and strategic support circles for stress relief.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <a href="#health-slide-1"></a>
+                <a href="#health-slide-2"></a>
+                <a href="#health-slide-3"></a>
+            </div>
+        </div>
+
         <p>At WE FOR HEIGHTS, we believe that health is the cornerstone of empowerment. Without access to adequate healthcare, nutrition, and mental health resources, achieving systemic equality is incredibly difficult. Our health development programs are designed to bridge these gaps for marginalized communities.</p>
 
         <h2>Our Primary Objectives</h2>
@@ -209,5 +326,25 @@
         <p class="copyright-text">&copy; 2026 WE FOR HEIGHTS. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const slider = document.querySelector('.slider');
+        let scrollAmount = 0;
+        
+        setInterval(() => {
+            if (!slider) return;
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+            scrollAmount += slider.clientWidth;
+            
+            if (scrollAmount > maxScroll) {
+                scrollAmount = 0;
+            }
+            
+            slider.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }, 4000);
+    </script>
 </body>
 </html>
